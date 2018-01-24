@@ -1,0 +1,405 @@
+body {
+	/* margin: 0; */
+	/* overflow: auto; */
+	/* overflow-y: hidden; */
+	background: linear-gradient(#061233, #2d3a98);
+	/* display: relative; */
+	font-family: 'Montserrat', sans-serif;
+	/* width: 100%; */
+}
+
+canvas {
+	position: absolute;
+	z-index: 1;
+}
+
+.icons {
+	color: #ffffff;
+	top: 0;
+	z-index: 2;
+	/*width: 80vw;*/
+	height: 80vh;
+	margin: 0 auto;
+}
+
+.absolute {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	margin: 0 auto;
+	z-index: 2;
+}
+
+.left,
+.right {
+	/*background: black;*/
+	/* transform: translateX(-100%); */
+	transition: .20s ease-out;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: white;
+	filter: blur(3px);
+	filter: drop-shadow(70px 70px 20px white);
+}
+
+.left {
+	left: 0;
+	transform: translateX(-100%);
+}
+
+.right {
+	right: 0;
+	transform: translateX(100%);
+}
+
+.button:hover>.left {
+	/* transition: .30s move_to_left ; */
+	transform: translateX(0%);
+}
+
+.button:hover {
+	box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 1);
+}
+
+.button:hover .right {
+	/* animation: move_to_right 0.5s 1; */
+	transform: translateX(0%);
+}
+
+.button:hover .text {
+	color: #000000;
+}
+
+.text {
+	transform: skewX(20deg);
+	transition: all .20s ease-in;
+}
+
+.section {
+	z-index: 100;
+}
+
+.button {
+	transition: .20s ease-in;
+	position: relative;
+	color: white;
+	margin: 0 auto;
+	font-size: 30px;
+	vertical-align: middle !important;
+	cursor: pointer;
+	width: 200px;
+	height: 40px;
+	border: 2px solid white;
+	border-radius: 2px;
+	overflow: hidden;
+	transform: skewX(-20deg);
+	overflow: hidden;
+	display: inline-block;
+	z-index: 3;
+}
+
+.presentation {
+	font-size: 40px;
+	color: white;
+}
+
+#myProgress {
+	width: 80%;
+	/*float: left;*/
+	background-color: #CCD9CE;
+	display: inline-block;
+	top: 400%;
+}
+
+#myBar {
+	width: 1%;
+	height: 20px;
+	background-color: #F6EDD3;
+}
+
+.sl,
+.sl-2 {
+	/* height: 120px; */
+	position: relative;
+	/* margin: 0 auto; */
+	/*width: 10%;*/
+	/* float: left; */
+	/*background: green;*/
+	padding: 1%;
+	/*padding: ng: 5%;*/
+	display: inline-block;
+	/*margin-left: 40%;*/
+	height: 100%;
+}
+
+.sl {
+	width: 10%;
+	float: left;
+	display: inline-block;
+	position: relative;
+	z-index: 200;
+}
+
+.sl-1 {
+	width: 45%;
+	float: left;
+	/*background: blue;*/
+	padding: 1%;
+	position: relative;
+	z-index: 200;
+	text-align: center;
+	/* overflow: hidden; */
+	/*padding: ng: 5%;*/
+	/*display: inline-block;*/
+	/* margin-left: 40%; */
+	height: 100%;
+}
+
+.sl-2 {
+	width: calc(40% - 1%);
+	/*background: red;*/
+	overflow: hidden;
+	float: left;
+	/*margin: 0 auto;*/
+	/*text-align: center;*/
+	/*position: relative; */
+	/*margin-left: 10%;*/
+}
+
+.all-slide {
+	position: relative;
+	/*top: 100%;*/
+	/*margin: 0 auto;*/
+	left: 0;
+}
+
+.tool {
+	font-size: 60px;
+	
+	position: relative;
+	display: block;
+	z-index: 50;
+	height: 14vh;
+	/*top: -100%;*/
+	margin: 0px;
+	/*margin-bottom: 10px*/
+}
+.t{
+	transition: all .20s ease-out;
+	opacity: .5;
+	cursor: pointer;
+}
+
+#box {
+	margin: 100px;
+	padding: 10px;
+	background-color: blue;
+}
+
+
+/*.first{
+		opacity: 1;
+		position: absolute;
+		font-size: 140px;
+		z-index: 100
+		margin-left: -3px !important;
+	}
+*/
+
+
+/*.fp-tableCell:nth-child(1){
+	vertical-align: initial !important;
+}*/
+
+.photo {
+	width: 300px;
+	height: 300px;
+	background: white;
+	border-radius: 50%;
+	border: 5px solid white;
+	box-shadow: 7px 7px 41px black inset;
+	overflow: hidden;
+	background-image: url('assets/profile.jpg');
+	background-position: center;
+	background-position-y: 0%;
+	background-size: 18.7em;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+
+.text1 {
+	animation: slideIn 1000ms forwards ;
+	z-index: 150;
+	font-size:30px; 
+	position:absolute;
+	display: none;
+	width: 100%;
+
+	/*text-align: center;*/
+}
+
+.slide_out {
+	animation: slideOut 500ms forwards;
+}
+
+@keyframes slideIn {
+	0% {
+		left: -30%;
+		/* opacity: 0; */
+	}
+	/* 90%{
+		opacity: 1;
+	} */
+	80%{
+		left: 10%;
+	}
+	100% {
+		left: 0%;
+	}
+}
+
+@keyframes slideOut {
+	0% {
+		left: 0%;
+	}
+	/*20% {left: -20%}*/
+	100% {
+		left: 100%;
+	}
+}
+.progress{
+    position: relative;
+    width: 100%;
+    height: 40%;
+    margin: 0px;
+    /* padding: 0; */
+    top: 50%;
+    transform: translateY(-50%);
+}
+.name2{
+	margin-top: 10%;
+	/*width: 400px;*/
+	font-size: 30px;
+	height: 1vh;
+	/*width :450px;*/
+}
+.name{
+	z-index: 500;
+}
+#slide{
+	position: absolute;
+}
+.aboutme{
+	width: 100%;
+	margin-top: 10%;
+	font-size: 16px;
+}
+.projet,.tech{
+	float: left;
+	width: 50vw;
+	height: 80vh;
+	top: 0;
+	
+}
+.projet{
+	background-size: cover;
+	filter: blur(2px);
+	z-index: -1;
+}
+.first{
+	left: 0;
+	background-image: url("assets/KO_lote-2_M-016-2016__13072017_.png");
+}
+.seconde{
+	left: 100vw;
+	background-image: url("assets/phone.jpg");
+}
+.description-projet,.projet,.tech{
+	/* padding: 5%; */
+	top: 10%;
+	float: left;
+	position: absolute;
+	 transition: all .50s linear; 
+}
+.description-projet{
+	color: white;
+	width: 45vw;
+	margin-left: 13%;	
+	z-index: -1;
+	padding-right : 50%;
+	font-size: 26px;
+	opacity: 1;
+	z-index: -2;
+}
+.fp-controlArrow{
+	box-shadow: 1px 1px 1px black;
+	background: black;
+}
+
+.tech:hover + .projet{
+	width: 80vw;
+	/*animation: image-effet 800ms ease-out;*/
+	/* opacity: 0; */
+	filter: none;
+}
+
+
+.tech:hover + .projet + .description-projet  {
+	opacity: 0.5;
+	font-size: 22px;
+	width: 39vw;
+} 
+.tech:hover + .projet .inside{
+	opacity: 0;
+}
+.inside{
+	/* width: 100%;
+	height: 100%; */
+	background: black;
+	opacity: 0.6;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	transition: all .50s linear;
+}
+/* .inside > i{
+	
+} */
+.tech{
+	text-align: center;
+	transition: all .50s linear;
+	display: table-cell;
+}
+.g{
+	font-size: 150px;
+	color: white;
+	position: relative;
+	opacity: 1;
+	z-index: 3;
+	top: 30%;
+}
+.tech:hover{
+	width: 80vw;
+	opacity: 0;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+/* .Rsl-1,.Rsl-2{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	} */
+@media screen and (min-width: 360px) {
+    .Rsl-1,.Rsl-2{
+		position: relative;
+		float: left;
+	}
+}
