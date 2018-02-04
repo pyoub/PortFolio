@@ -2,7 +2,7 @@ var canvas = document.getElementById('can');
 var fullpage = document.getElementById('fullpage');
 var raf;
 canvas.width = window.innerWidth ;
-canvas.height = window.innerHeight*3 ;
+canvas.height = window.innerHeight*3.5 ;
 var circles=[];
 var ctx = canvas.getContext("2d");
 
@@ -17,7 +17,7 @@ canvas.onmousemove = function(e) {
 function ball () {
 	 this.r  = (Math.random() * 7)+2,
 	 this.x = (Math.random() * innerWidth)+this.r,
-	 this.y = (Math.random() * -innerHeight*3)+this.r,
+	 this.y = (Math.random() * -innerHeight*3.5)+this.r,
 	 this.vx = (Math.random() * Math.cos(this.r)/6) - (Math.random()* Math.cos(this.r)/6),
 	 this.vy = (Math.random()*2.2)+2;
 	 this.distanceX = mouseX-this.x;
@@ -73,7 +73,7 @@ function ball () {
 		
 		
 		this.y += this.vy*0.5;
-		if(this.y>=(innerHeight*3)+this.r){
+		if(this.y>=(innerHeight*3.5)+this.r){
 			this.y = 0;
 			this.r  =(Math.random() * 7)+2;
 			this.x = Math.random() * innerWidth+this.r;
