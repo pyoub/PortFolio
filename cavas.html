@@ -12,7 +12,17 @@
 </head>
 
 <body>
-
+	<div class="load">
+		<div class="loader">
+			<h1 id='loading'>Hi !</h1>
+			<h1 id='loading'>great to see you</h1>
+			<h1 id='loading'>take your time ! enjoy</h1>
+		</div>
+		<div class="Pload">
+			<div class="load-side load-left"></div>
+			<div class="load-side load-right"></div>
+		</div>
+	</div>
 	<div id="fullpage">
 
 		<canvas id="can" moz-opaque></canvas>
@@ -91,7 +101,8 @@
 							</div>
 							<span style="font-size: 17px; margin-left: 5px; position: absolute;" id="count">0</span>
 							<p class="text1" id="p0">The world's most popular mobile platform.</p>
-							<p class="text1" id="p1"> Node.js is easily employed as a server-side proxy where it can handle a large amount of simultaneous connections in a non-blocking manner.</p>
+							<p class="text1" id="p1"> Node.js is easily employed as a server-side proxy where it can handle a large amount of simultaneous connections in
+								a non-blocking manner.</p>
 							<p class="text1" id="p2">Symfony is a set of reusable PHP components and a PHP framework to build web applications.</p>
 							<p class="text1" id="p3">JavaScript is a powerful and popular language for programming on the web.</p>
 							<p class="text1" id="p4">Vue.js is an open-source progressive JavaScript framework for building user interfaces.</p>
@@ -140,197 +151,228 @@
 					<a href="mailto:AyoubELouahili@gmail.com" target="_top">Mail Me</a>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 
 	<script src="assets/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="assets/jquery.fullpage.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
-					var id = 0;
-					var index = -1;
-					var first = true;
-					$('#fullpage').fullpage({
-						// css3: true,
-						scrollingSpeed: 1000,
-						anchors: ['', 'AboutPage', 'PortfolioPage', 'ContactPage'],
-						onLeave: function (index, nextIndex, direction) {
-							
-							// console.log(nextIndex);
-							if (nextIndex == 2 && index == 1 ) {
-								if ($(window).width() > 360) {
-									$(this).animateAppendTo('#here', 800, '#myname', 30, "none");
-									$('#myname').css("font-size", "25px");
-								} else if($(window).width() <= 360 && first == true ) {
-									$(this).animateAppendTo('#here', 800, '#myname', 20, "none");
-									$('#myname').css("font-size", "25px");
-									first = false;
-								}
-							}
-							if (nextIndex == 1) {
-								if ($(window).width() > 360) {
-									$(this).animateAppendTo('#here2', 800, '#myname', 30, "10%");
-								} 
-								
-							}
-							// if (nextIndex == 4 && index == 3) {
+			var id = 0;
+			var index = -1;
+			var first = true;
+			$('#fullpage').fullpage({
+				// css3: true,
+				scrollingSpeed: 1000,
+				anchors: ['', 'AboutPage', 'PortfolioPage', 'ContactPage'],
+				onLeave: function (index, nextIndex, direction) {
 
-							// }
-							// console.log(index);
-						},
-					});
-
-
-					$('.t').hover(function () {
-						
-						$('.t').eq(index).css('opacity', '.5');
-						$(this).css('opacity', '1');
-						if (id != 0) {
-							clearInterval(id);
-						}
-						switch ($('.t').index(this)) {
-							case 0:
-								progbar(63);
-								$('#p' + index).toggleClass('slide_out');
-								$('#p0').show();
-								index = 0;
-								$('#p' + index).removeClass('slide_out');
-
-								break;
-							case 1:
-								// if (id != -1)
-								//clearInterval(id);
-								progbar(57);
-								$('#p' + index).toggleClass('slide_out');
-								$('#p1').show();
-								index = 1;
-								$('#p' + index).removeClass('slide_out');
-
-								// $('#p'+index).animate({
-								//       	"left" : "0%"
-								//       },1000
-								// //       ,function(){
-
-								// //       	$('#p'+index).remove();
-								// //       	index = 1;
-								// //       	console.log(index);
-								// // }
-								// );
-								//       //},1000);
-
-
-								//$('.tool').eq(1).fadeTo( "normal", 1 );
-								break;
-							case 2:
-								// if (id != -1)
-								//clearInterval(id);
-								progbar(74);
-								$('#p' + index).toggleClass('slide_out');
-								$('#p2').show();
-								index = 2;
-								$('#p' + index).removeClass('slide_out');
-								//$('.tool').eq(2).fadeTo( "normal", 1 );
-								break;
-							case 3:
-								// if (id != -1)
-								//clearInterval(id);
-								progbar(87);
-								$('#p' + index).toggleClass('slide_out');
-								$('#p3').show();
-								index = 3;
-								$('#p' + index).removeClass('slide_out');
-								//$('.tool').eq(3).fadeTo( "normal", 1 );
-								break;
-							case 4:
-								// if (id != -1)
-								//clearInterval(id);
-								progbar(46);
-								$('#p' + index).toggleClass('slide_out');
-								$('#p4').show();
-								index = 4;
-								$('#p' + index).removeClass('slide_out');
-								//$('.tool').eq(4).fadeTo( "normal", 1 );
-								break;
-							case 5:
-								// if (id != -1)
-								//clearInterval(id);
-								progbar(89);
-
-								$('#p' + index).toggleClass('slide_out');
-								$('#p5').show();
-								index = 5;
-								$('#p' + index).removeClass('slide_out');
-								//$('.tool').eq(5).fadeTo( "normal", 1 );
-						}
-
-					}, function () {
-						$(this).css('opacity', '.5');
-						$('.t').eq(index).css('opacity', '1');
-					});
-
-					function progbar(i) {
-						var $elem = $("#myBar");
-						var width = 1;
-						// console.log(i + " i " + id + " id");
-
-						id = setInterval(function () {
-
-							if (width >= i && id != -1) {
-								clearInterval(id);
-							} else {
-								$('#count').text((width + 1) + '%');
-								width++;
-								$elem.width(width + '%');
-							}
-						}, 8);
-					}
-					// $(this).animate(function(){
-
-					// });
-					$.fn.animateAppendTo = function (sel, speed, first, font, float) {
-						var $this = $(first),
-							newEle = $this.clone(true).appendTo(sel);
-						newPos = newEle.offset();
-						newEle.hide();
-						// console.log(newPos);
+					// console.log(nextIndex);
+					if (nextIndex == 2 && index == 1) {
 						if ($(window).width() > 360) {
-						$this.css({
-							"text-align": "center",
-							"width": "450px",
-							"left": float,
-							"position": "absolute"
-						}).animate({
-
-							top: newPos.top,
-							fontSize: font + "px",
-							left: newPos.left,
-						}, speed, function () {
-							newEle.show();
-							$this.remove();
-						});}
-						else{
-							$this.css({
-							"text-align": "center",
-							"width": "240px",
-							"left": float,
-							// "z-index":"10000000",
-							"position": "absolute"
-						}).animate({
-
-							top: newPos.top,
-							fontSize: font + "px",
-							left: newPos.left,
-						}, speed, function () {
-							newEle.show();
-							$this.remove();
-						});
+							$(this).animateAppendTo('#here', 800, '#myname', 30, "none");
+							$('#myname').css("font-size", "25px");
+						} else if ($(window).width() <= 360 && first == true) {
+							$(this).animateAppendTo('#here', 800, '#myname', 20, "none");
+							$('#myname').css("font-size", "25px");
+							first = false;
+						}
+					}
+					if (nextIndex == 1) {
+						if ($(window).width() > 360) {
+							$(this).animateAppendTo('#here2', 800, '#myname', 30, "10%");
 						}
 
 					}
+					// if (nextIndex == 4 && index == 3) {
+
+					// }
+					// console.log(index);
+				},
+			});
+
+
+			$('.t').hover(function () {
+
+				$('.t').eq(index).css('opacity', '.5');
+				$(this).css('opacity', '1');
+				if (id != 0) {
+					clearInterval(id);
+				}
+				switch ($('.t').index(this)) {
+					case 0:
+						progbar(63);
+						$('#p' + index).toggleClass('slide_out');
+						$('#p0').show();
+						index = 0;
+						$('#p' + index).removeClass('slide_out');
+
+						break;
+					case 1:
+						// if (id != -1)
+						//clearInterval(id);
+						progbar(57);
+						$('#p' + index).toggleClass('slide_out');
+						$('#p1').show();
+						index = 1;
+						$('#p' + index).removeClass('slide_out');
+
+						// $('#p'+index).animate({
+						//       	"left" : "0%"
+						//       },1000
+						// //       ,function(){
+
+						// //       	$('#p'+index).remove();
+						// //       	index = 1;
+						// //       	console.log(index);
+						// // }
+						// );
+						//       //},1000);
+
+
+						//$('.tool').eq(1).fadeTo( "normal", 1 );
+						break;
+					case 2:
+						// if (id != -1)
+						//clearInterval(id);
+						progbar(74);
+						$('#p' + index).toggleClass('slide_out');
+						$('#p2').show();
+						index = 2;
+						$('#p' + index).removeClass('slide_out');
+						//$('.tool').eq(2).fadeTo( "normal", 1 );
+						break;
+					case 3:
+						// if (id != -1)
+						//clearInterval(id);
+						progbar(87);
+						$('#p' + index).toggleClass('slide_out');
+						$('#p3').show();
+						index = 3;
+						$('#p' + index).removeClass('slide_out');
+						//$('.tool').eq(3).fadeTo( "normal", 1 );
+						break;
+					case 4:
+						// if (id != -1)
+						//clearInterval(id);
+						progbar(46);
+						$('#p' + index).toggleClass('slide_out');
+						$('#p4').show();
+						index = 4;
+						$('#p' + index).removeClass('slide_out');
+						//$('.tool').eq(4).fadeTo( "normal", 1 );
+						break;
+					case 5:
+						// if (id != -1)
+						//clearInterval(id);
+						progbar(89);
+
+						$('#p' + index).toggleClass('slide_out');
+						$('#p5').show();
+						index = 5;
+						$('#p' + index).removeClass('slide_out');
+						//$('.tool').eq(5).fadeTo( "normal", 1 );
+				}
+
+			}, function () {
+				$(this).css('opacity', '.5');
+				$('.t').eq(index).css('opacity', '1');
+			});
+
+			function progbar(i) {
+				var $elem = $("#myBar");
+				var width = 1;
+				// console.log(i + " i " + id + " id");
+
+				id = setInterval(function () {
+
+					if (width >= i && id != -1) {
+						clearInterval(id);
+					} else {
+						$('#count').text((width + 1) + '%');
+						width++;
+						$elem.width(width + '%');
+					}
+				}, 8);
+			}
+			// $(this).animate(function(){
+
+			// });
+			$.fn.animateAppendTo = function (sel, speed, first, font, float) {
+				var $this = $(first),
+					newEle = $this.clone(true).appendTo(sel);
+				newPos = newEle.offset();
+				newEle.hide();
+				// console.log(newPos);
+				if ($(window).width() > 360) {
+					$this.css({
+						"text-align": "center",
+						"width": "450px",
+						"left": float,
+						"position": "absolute"
+					}).animate({
+
+						top: newPos.top,
+						fontSize: font + "px",
+						left: newPos.left,
+					}, speed, function () {
+						newEle.show();
+						$this.remove();
+					});
+				} else {
+					$this.css({
+						"text-align": "center",
+						"width": "240px",
+						"left": float,
+						// "z-index":"10000000",
+						"position": "absolute"
+					}).animate({
+
+						top: newPos.top,
+						fontSize: font + "px",
+						left: newPos.left,
+					}, speed, function () {
+						newEle.show();
+						$this.remove();
+					});
+				}
+
+			}
+
+
 		});
-					// $("About").click(function(){
-					// 	window.location.href("#AboutPage");
-					// });
+		// $('h1').each(function(index){
+
+		// 		$(this).css('opacity', '0').animate({opacity : 1},2000,function(){
+		// 			console.log(index);
+		// 			setTimeout(10000);
+		// 		});
+		// 		$(this).animate({opacity : 0},2000,function(){
+		// 			setTimeout(1000);
+		// 		});
+		// 	});
+
+		$('h1').eq(0).fadeIn(2000);
+		setTimeout(() => {
+			$('h1').eq(0).fadeOut(1000);
+			$('h1').eq(1).fadeIn(2000);
+			setTimeout(() => {
+			$('h1').eq(1).fadeOut(1000);
+			$('h1').eq(2).fadeIn(2000);
+			setTimeout(() => {
+			$('h1').eq(2).fadeOut(1000);
+			$('.load-left').addClass("load-left-out");
+			$('.load-right').addClass("load-right-out");
+			setTimeout(() => {
+				$(".load").hide();
+			}, 2000);
+		}, 2000);
+		}, 2000);
+		}, 3000);
+		
+		// $("About").click(function(){
+		// 	window.location.href("#AboutPage");
+		// });
 	</script>
 
 	<script type="text/javascript" src="canvas.js"></script>
